@@ -9,6 +9,7 @@ import 'screens/group_list_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/verify_email_screen.dart';
 import 'theme/app_theme.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,8 +18,9 @@ void main() async {
   String? firebaseError;
 
   try {
-    await Firebase.initializeApp();
-    firebaseReady = true;
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   } catch (e) {
     firebaseError = e.toString();
     // Firebase not configured yet - app will still work locally (without login)
