@@ -21,6 +21,7 @@ void main() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
+    firebaseReady = true;
   } catch (e) {
     firebaseError = e.toString();
     // Firebase not configured yet - app will still work locally (without login)
