@@ -56,8 +56,7 @@ class MyApp extends StatelessWidget {
       title: 'Mini Splitwise',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: AuthWrapper(
         firebaseReady: firebaseReady,
         firebaseError: firebaseError,
